@@ -16,10 +16,10 @@ function adminimal_theme_preprocess_html(&$variables) {
   // Add adminimal class to the body.
   $variables['attributes']['class'][] = 'adminimal';
 
-  $node = \Drupal::routeMatch()->getParameter('node');
-    if($node) {
+    $current_path = \Drupal::request()->getRequestUri();
+    if($current_path) {
         $session = \Drupal::request()->getSession();
-        $nid = $node->id();
-        $session->set('current_id', $nid);
+        $path = $current_path;
+        $session->set('current_path', $path);
     }
 }

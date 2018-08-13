@@ -3,3 +3,5 @@ type: module
 description: 'custom module for project'
 package: Development
 core: 8.x
+dependencies:
+  - social_auth
